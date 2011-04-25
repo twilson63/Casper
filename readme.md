@@ -1,6 +1,14 @@
 # Casper
 
+(Still in Development Mode...)
+
 Is a jruby library that takes a jrxml document, a xmldocument, and a xpath selection string, to create a pdf report.
+
+# Install
+
+``` ruby
+gem install http://casper-gem.s3.amazonaws.com/casper-0.0.1.gem
+```
 
 # Input
 
