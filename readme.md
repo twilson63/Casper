@@ -7,7 +7,8 @@ Is a jruby library that takes a jrxml document, a xmldocument, and a xpath selec
 # Install
 
 ``` ruby
-gem install http://casper-gem.s3.amazonaws.com/casper-0.0.1.gem
+curl -O http://casper-gem.s3.amazonaws.com/casper-0.0.1.gem
+gem install casper-0.0.1.gem
 ```
 
 # Input

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Casper do
+describe CasperReports do
 
   it 'compiles jasper report' do
     jrxml = open(File.join(File.dirname(__FILE__), 'data','testreport.jrxml')).read

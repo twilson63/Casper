@@ -27,7 +27,7 @@ $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'dist', 'jasper
 $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include')
 
 # Provide a simple class interface to running a jasper report
-class Casper
+class CasperReports
   #VERSION = '0.0.1'
 
   def compile(jrxml, data, xpath)
