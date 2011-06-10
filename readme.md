@@ -4,11 +4,14 @@
 
 Is a jruby library that takes a jrxml document, a xmldocument, and a xpath selection string, to create a pdf report.
 
+# Requirements
+
+This gem requires jruby > 1.6.0
+
 # Install
 
 ``` ruby
-curl -O http://casper-gem.s3.amazonaws.com/casper-0.0.1.gem
-gem install casper-0.0.1.gem
+gem install casperreports
 ```
 
 # Input
@@ -25,7 +28,7 @@ Casper will use the JasperReports library to compile and return a pdf.
 
 A pdf document in string of bytes
 
-# Example
+# Usage Examples
 
 movie_jrxml = open('moviereport.jrxml').read
 movies = open('movies.xml').read
