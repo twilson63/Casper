@@ -5,7 +5,7 @@ $:.unshift lib unless $:.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = "casperreports"
-  s.version     = "0.0.1"
+  s.version     = "0.0.2"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Tom Wilson"]
   s.email       = ["tom@jackhq.com"]
@@ -17,4 +17,3 @@ Gem::Specification.new do |s|
   s.files        = Dir.glob("{lib}/**/*") + Dir.glob("{include}/**/*") + Dir.glob("{spec}/**/*") + %w(LICENSE readme.md Rakefile)
   s.require_path = 'lib'
 end
-

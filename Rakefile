@@ -8,9 +8,11 @@ require 'rspec/core/rake_task'
 desc 'Build XmlDataReportProducer'
 task :build do |t|
   system 'javac -cp include/lib/commons-digester-1.7.jar:include/lib/commons-logging-1.1.1.jar:include/lib/commons-collections-2.1.1.jar:include/lib/commons-beanutils-1.8.0.jar:include/lib/groovy-all-1.7.5.jar:include/lib/xalan-2.7.1.jar:include/lib/itext-2.1.7.jar:include/dist/jasperreports-4.0.1.jar ./include/XmlDataReportProducer.java'
-  puts 'compiled XmlDatReportProducer ....'
+  puts 'compiled XmlDataReportProducer ....'
 end
 
+require 'bundler'
+Bundler::GemHelper.install_tasks
 
 desc 'Default: run specs.'
 task :default => :spec
