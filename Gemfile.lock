@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    casper (0.0.1)
+    casperreports (0.0.2)
 
 GEM
   remote: http://rubygems.org/
@@ -18,7 +18,8 @@ GEM
 
 PLATFORMS
   java
+  ruby
 
 DEPENDENCIES
-  casper!
+  casperreports!
   rspec (>= 2.5.0)
