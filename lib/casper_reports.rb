@@ -9,7 +9,7 @@
 # Example:
 #
 #  c = Casper.new
-#  pdf_data = c.compile open('text.jrxml'), open('data.xml'), '//node'
+#  pdf_data = c.compile open('text.jrxml'), open('data.xml'), '//node', 'pdf'
 #  open('mypdf.pdf', 'wb').write pdf_data
 
 # Requirements
@@ -29,8 +29,9 @@ $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include')
 
 # Provide a simple class interface to running a jasper report
 class CasperReports
+  VERSION = '0.1.0'
 
-  def compile(jrxml, data, xpath, type)
+  def compile(jrxml, data, xpath, type='pdf')
     String.from_java_bytes(Java::XmlDataReportProducer.compile(jrxml, data, xpath, type))
   end
 

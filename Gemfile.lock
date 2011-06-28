@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    casperreports (0.0.2)
+    casperreports (0.0.4)
 
 GEM
   remote: http://rubygems.org/
