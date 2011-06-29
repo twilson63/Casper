@@ -23,7 +23,7 @@ $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'lib', 'commons
 $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'lib', 'commons-beanutils-1.8.0.jar')
 $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'lib', 'groovy-all-1.7.5.jar')
 $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'lib', 'xalan-2.7.1.jar')
-$CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'lib', 'itext-2.1.7.jar')
+$CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'lib', 'iText-2.1.7.jar')
 $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'dist', 'jasperreports-4.0.1.jar')
 $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include')
 
