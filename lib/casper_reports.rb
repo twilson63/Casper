@@ -23,13 +23,13 @@ $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'lib', 'commons
 $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'lib', 'commons-beanutils-1.8.0.jar')
 $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'lib', 'groovy-all-1.7.5.jar')
 $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'lib', 'xalan-2.7.1.jar')
-$CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'lib', 'itext-2.1.7.jar')
+$CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'lib', 'iText-2.1.7.jar')
 $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'dist', 'jasperreports-4.0.1.jar')
 $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include')
 
 # Provide a simple class interface to running a jasper report
 class CasperReports
-  VERSION = '0.1.0'
+  VERSION = '0.1.1'
 
   def compile(jrxml, data, xpath, type='pdf')
     String.from_java_bytes(Java::XmlDataReportProducer.compile(jrxml, data, xpath, type))
