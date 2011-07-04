@@ -1,5 +1,5 @@
 require 'java'
-require 'jasperreports'
+
 # Load Jar and Java Classes
 $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'lib', 'poi-3.6.jar')
 $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include', 'lib', 'commons-digester-1.7.jar')
