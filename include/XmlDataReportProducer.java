@@ -14,33 +14,38 @@ import net.sf.jasperreports.engine.export.JRXlsExporter;
 public class XmlDataReportProducer {
 
   public static byte[] compile(String jrxml, String xmldata, String select, String type) {
-    try {
-      ByteArrayInputStream bs_jrxml = new ByteArrayInputStream(jrxml.getBytes());
-      ByteArrayInputStream bs_xml = new ByteArrayInputStream(xmldata.getBytes());
+    byte[] report = null;
+	ByteArrayInputStream bs_jrxml = null;
+	ByteArrayInputStream bs_xml = null;
+	try {
+      bs_jrxml = new ByteArrayInputStream(jrxml.getBytes());
+      bs_xml = new ByteArrayInputStream(xmldata.getBytes());
 
       JasperReport jr = JasperCompileManager.compileReport(bs_jrxml);
       JRXmlDataSource ds = new JRXmlDataSource(bs_xml, select);
       JasperPrint jp = JasperFillManager.fillReport(jr, null, ds);
-      
 	  if (type.equalsIgnoreCase("pdf"))
-		return pdf(jp);
+		report = pdf(jp);
 	  else if (type.equalsIgnoreCase("xls"))
-		return xls(jp);
-	  else
-		return null;
-    }catch (JRException e) {
+		report = xls(jp);
+	  bs_jrxml.close();
+	  bs_xml.close();
+    }catch (Exception e) {
       e.printStackTrace();
       return null;
     }
+	return report;
   }
 
-  private static byte[] xls(JasperPrint jasperprint) throws JRException {
+  private static byte[] xls(JasperPrint jasperprint) throws JRException, IOException {
   	JRExporter exporter = new JRXlsExporter(); 
 	ByteArrayOutputStream xls = new ByteArrayOutputStream(); 
 	exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperprint);
 	exporter.setParameter(JRExporterParameter.OUTPUT_STREAM, xls);
 	exporter.exportReport();
-	return xls.toByteArray();
+	byte[] report = xls.toByteArray();
+	xls.close();
+	return report;
   }
 
   private static byte[] pdf(JasperPrint jasperprint) throws JRException {
