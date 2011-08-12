@@ -1,3 +1,19 @@
+# Welcome to Casper
+# The friendly cousin of Jasper Reports
+
+# Casper allows you to generate a pdf from a jrxml file, xml data, and a xpath selector
+
+# The compile statement return a string of bytes that can be streammed to file or to
+# a browser.
+
+# Example:
+#
+#  c = Casper.new
+#  pdf_data = c.compile open('text.jrxml'), open('data.xml'), '//node', 'pdf'
+#  open('mypdf.pdf', 'wb').write pdf_data
+
+# Requirements
+# This Gem requires jruby > 1.6.0
 require 'java'
 
 # Load Jar and Java Classes
@@ -14,8 +30,9 @@ $CLASSPATH << File.join(File.dirname(__FILE__), '..', 'include')
 
 # Provide a simple class interface to running a jasper report
 class CasperReports
+  VERSION = '0.1.1'
 
-  def compile(jrxml, data, xpath, type)
+  def compile(jrxml, data, xpath, type='pdf')
     String.from_java_bytes(Java::XmlDataReportProducer.compile(jrxml, data, xpath, type))
   end
 
