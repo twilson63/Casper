@@ -1,10 +1,8 @@
-# CasperReports
+# Casper
 
-V 0.1.0
+(Still in Development Mode...)
 
-Casper wraps a jRuby sheet over the jasper reporting engineto make it
-more ruby friendly.  Just like your friendly ghost :-)
-
+Is a jruby library that takes a jrxml document, a xmldocument, a xpath selection string and a export type to create a pdf/xls report.
 
 # Requirements
 
@@ -16,33 +14,30 @@ This gem requires jruby > 1.6.0
 gem install casperreports
 ```
 
-# Input Paramters
+# Input
 
-* JasperReport Template or jrxml file (String of XML)
-* Xml Data (String of XML)
-* XPath Selection (String)
-* Type ('pdf','xls')
+* JasperReport Template or jrxml file
+* Xml Data
+* XPath Selection
+* Export type
 
-# How does it work?
+# Process
 
-Casper will use the JasperReports library to take the two xml documents
-along with the filter string to build a jasper report return the report
-as a pdf or xls, based on the type parameter.
+Casper will use the JasperReports library to compile and return a pdf.
 
 # Output
 
-A pdf document in string of bytes
+A pdf/xls document in string of bytes (streaming)
 
 # Usage Examples
 
 ``` ruby
-
-require 'casper_reports'
-
 movie_jrxml = open('moviereport.jrxml').read
 movies = open('movies.xml').read
 
-pdf_string = Casper.new.compile(movie_jrxml, movies, '//movie')
+pdf_string = Casper.new.compile(movie_jrxml, movies, '//movie', 'pdf')
 open('movie.pdf', 'wb').write(pdf_string)
 
+xls_string = Casper.new.compile(movie_jrxml, movies, '//movie', 'xls')
+open('movie.pdf', 'wb').write(xla_string)
 ```
